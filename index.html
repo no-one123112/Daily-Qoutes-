@@ -4,22 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Quotes</title>
-  <link rel="manifest" href="manifest.json">
+
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#ff6347">
 </head>
 <body>
+
   <div class="container">
     <h1>Daily Quotes</h1>
     <p id="quote">Click the button to see a quote!</p>
     <button id="nextBtn">Next Quote</button>
   </div>
+
   <script src="script.js"></script>
+
   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js")
-      .then(() => console.log("Service Worker Registered"))
-      .catch(err => console.log("Service Worker Failed", err));
-  }
-</script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+
 </body>
 </html>
