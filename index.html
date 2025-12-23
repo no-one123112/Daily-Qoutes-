@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Daily Quotes</title>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="/Daily-Qoutes/manifest.json">
-  <meta name="theme-color" content="#ff6347">
+
+  <!-- PWA Manifest (GitHub Pages repo name) -->
+  <link rel="manifest" href="/Daily-Qoutes-/manifest.json">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#000000">
 </head>
 <body>
 
@@ -17,11 +23,15 @@
     <button id="nextBtn">Next Quote</button>
   </div>
 
+  <!-- Main Script -->
   <script src="script.js"></script>
 
+  <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/Daily-Qoutes/sw.js");
+      navigator.serviceWorker.register("/Daily-Qoutes-/sw.js")
+        .then(() => console.log("Service Worker registered"))
+        .catch(err => console.log("SW error:", err));
     }
   </script>
 
